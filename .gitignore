@@ -141,3 +141,4 @@ cython_debug/
 .vscode
 LADXR_*.txt
 LADXR_*.json
+LADXR_*.bat
