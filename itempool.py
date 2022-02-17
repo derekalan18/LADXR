@@ -101,6 +101,9 @@ class ItemPool:
             self.add(RUPEES_20, self.get(BOWWOW) + self.get(SWORD) - 1)
             self.remove(SWORD, self.get(SWORD) - 1)
             self.remove(BOWWOW, self.get(BOWWOW))
+        if not options.rooster:
+            self.add(RUPEES_20)
+            self.remove(ROOSTER)
         if options.hpmode == 'inverted':
             self.add(BAD_HEART_CONTAINER, self.get(HEART_CONTAINER))
             self.remove(HEART_CONTAINER, self.get(HEART_CONTAINER))

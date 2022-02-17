@@ -134,7 +134,8 @@ def generateRom(options, seed, logic, *, rnd=None, multiworld=None):
     patches.maptweaks.tweakMap(rom)
     patches.chest.fixChests(rom)
     patches.shop.fixShop(rom)
-    patches.rooster.patchRooster(rom)
+    if options.rooster:
+        patches.rooster.patchRooster(rom)
     patches.trendy.fixTrendy(rom)
     patches.droppedKey.fixDroppedKey(rom)
     patches.madBatter.upgradeMadBatter(rom)

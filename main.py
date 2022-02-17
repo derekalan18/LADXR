@@ -121,6 +121,8 @@ def main(mainargs=None):
         help="Warning, bugged in various ways")
     parser.add_argument('--witch', dest="witch", action="store_true",
         help="Enables witch and toadstool in the item pool.")
+    parser.add_argument('--rooster', dest="rooster", action="store_true",
+        help="Adds rooster to the item pool.")
     parser.add_argument('--hpmode', dest="hpmode", choices=['default', 'inverted', '1', 'low', 'extralow'], default='default',
         help="Set the HP gamplay mode. Inverted causes health containers to take HP instead of give it and you start with more health. 1 sets your starting health to just 1 hearth.")
     parser.add_argument('--boomerang', dest="boomerang", choices=['default', 'trade', 'gift'], default='default',
