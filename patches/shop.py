@@ -35,7 +35,7 @@ skipSubRoutine:
         ldi  [hl], a
         ldi  [hl], a
         ld   de, $C505
-        
+
         ; Check if we want to load a key item into the shop.
         ldh  a, [$F8]
         bit  4, a
@@ -146,3 +146,7 @@ notArrows:
         ld   de, $7B5A
         jp   $3C77
     """), fill_nop=True)
+
+def fixSteal(rom):
+    # Make it so that stealing has no consequences
+    rom.patch(0x00, 0x1887, ASM("inc [hl]"), "", fill_nop=True)

@@ -198,6 +198,10 @@ def generateRom(options, seed, logic, *, rnd=None, multiworld=None):
     elif options.steal == 'always':
         rom.patch(4, 0x36F9, "FA4EDB", "3E0100")
 
+    # Steal from the shop with no consequences
+    if options.allowstealing:
+        patches.shop.fixSteal(rom)
+
     if options.hpmode == 'inverted':
         patches.health.setStartHealth(rom, 9)
     elif options.hpmode == '1':
