@@ -148,5 +148,7 @@ notArrows:
     """), fill_nop=True)
 
 def fixSteal(rom):
-    # Make it so that stealing has no consequences
+    # Don't change the players name to THIEF
+    rom.patch(0x00, 0x1883, ASM("inc [hl]"), "", fill_nop=True)
+    # Shop owner won't retaliate
     rom.patch(0x00, 0x1887, ASM("inc [hl]"), "", fill_nop=True)
